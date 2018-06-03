@@ -39,11 +39,23 @@
                                     <constraint firstAttribute="height" constant="44" id="Kcd-xX-6ld"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="rewind" id="T82-9B-K1l"/>
+                                    <barButtonItem systemItem="rewind" id="T82-9B-K1l">
+                                        <connections>
+                                            <action selector="decreaseButton:" destination="BYZ-38-t0r" id="FiK-Qm-vax"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="76A-aL-Eeg"/>
-                                    <barButtonItem title="Start" id="2sx-uG-8P7"/>
+                                    <barButtonItem title="Start" id="2sx-uG-8P7">
+                                        <connections>
+                                            <action selector="startButton:" destination="BYZ-38-t0r" id="6Ng-Vr-jGJ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7Li-U3-GyD"/>
-                                    <barButtonItem systemItem="fastForward" id="MRR-ii-lOd"/>
+                                    <barButtonItem systemItem="fastForward" id="MRR-ii-lOd">
+                                        <connections>
+                                            <action selector="increaseButton:" destination="BYZ-38-t0r" id="ynm-Eo-0Gr"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHG-rR-6Mm">
@@ -71,6 +83,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="numberLabel" destination="qHG-rR-6Mm" id="qfO-mS-sgA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

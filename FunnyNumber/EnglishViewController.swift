@@ -21,6 +21,11 @@ class EnglishViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var numberToString = [1: "One", 2: "Two"]
+    
+    
+    
+    
 
     /*
     // MARK: - Navigation
