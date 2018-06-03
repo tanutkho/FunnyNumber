@@ -10,6 +10,49 @@ import UIKit
 
 class EnglishViewController: UIViewController {
 
+
+    var myClass = MyClass()                     // inheritate
+    
+    
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    @IBAction func decreaseButton(_ sender: Any) {
+        var currentIndexInt: Int = myClass.myNumberInt
+        print("CurrentIndex ==> \(currentIndexInt)")
+        
+        if currentIndexInt <= 0 {
+            currentIndexInt = myClass.showNumberStrings.count
+            
+        }
+        let newIndexInt: Int = myClass.decreaseNumber(numberInt: currentIndexInt)
+        myClass.myNumberInt = newIndexInt
+        print("new index ==> \(myClass.myNumberInt)")
+        numberLabel.text = myClass.sentNumber()
+        
+    }
+    
+    @IBAction func startButton(_ sender: Any) {
+        numberLabel.text = "One"
+        myClass.myNumberInt = 0
+        
+    }
+    
+    @IBAction func increaseButton(_ sender: Any) {
+
+        var currentIndexInt: Int = myClass.myNumberInt
+        
+        currentIndexInt = currentIndexInt + 1
+
+        if currentIndexInt >= myClass.showNumberStrings.count {
+            currentIndexInt = 0
+        }
+        myClass.myNumberInt = currentIndexInt
+        numberLabel.text = myClass.sentNumber()
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +64,7 @@ class EnglishViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var numberToString = [1: "One", 2: "Two"]
+
     
     
     
